@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>Lessons</h1>
+    </header>
+    <main class="content">
+        <div class="lesson-tiles">
+            {% for lesson in lessons %}
+            <div class="lesson-tile">
+                <h2>{{ lesson.name }}</h2>
+                <p><strong>Learning Objectives:</strong> {{ lesson.objectives }}</p>
+                <p><strong>Difficulty Level:</strong> {{ lesson.difficulty }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('index') }}" class="btn back-btn">Back to Dashboard</a>
+    </main>
+</body>
+</html>

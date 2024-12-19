@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Shapes Area Calculation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>2D Shapes Area Calculation</h1>
+    </header>
+    <main class="content">
+        <div class="shape-categories">
+            <a href="#polygon" class="category-tile">Polygon</a>
+            <a href="#circle" class="category-tile">Circle</a>
+            <a href="#ellipse" class="category-tile">Ellipse</a>
+        </div>
+
+        <section id="polygon">
+            <h2>Polygon</h2>
+            <div class="shape-tiles">
+                <div class="shape-tile">
+                    <h3>Quadrilateral</h3>
+                    <p>Four-sided polygons with various properties.</p>
+                    <div class="sub-shapes">
+                        <div class="sub-shape-list">
+                            <div class="sub-shape">Square</div>
+                            <div class="sub-shape">Rectangle</div>
+                            <div class="sub-shape">Parallelogram</div>
+                            <div class="sub-shape">Trapezoid</div>
+                            <div class="sub-shape">Rhombus</div>
+                        </div>
+                        <img src="{{ url_for('static', filename='quadrilateral.png') }}" alt="Quadrilateral" class="shape-image">
+                    </div>
+                </div>
+                <div class="shape-tile">
+                    <h3>Triangle</h3>
+                    <p>Three-sided polygons with different angle properties.</p>
+                    <div class="sub-shapes">
+                        <div class="sub-shape-list">
+                            <div class="sub-shape">Right Triangle</div>
+                            <div class="sub-shape">Equilateral Triangle</div>
+                            <div class="sub-shape">Isosceles Triangle</div>
+                            <div class="sub-shape">Scalene Triangle</div>
+                        </div>
+                        <img src="{{ url_for('static', filename='triangle.png') }}" alt="Triangle" class="shape-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="circle">
+            <h2>Circle</h2>
+            <!-- Add circle content here -->
+        </section>
+
+        <section id="ellipse">
+            <h2>Ellipse</h2>
+            <!-- Add ellipse content here -->
+        </section>
+
+        <a href="{{ url_for('render_page', page='area_calculation') }}" class="btn back-btn">Back to Area Calculation</a>
+    </main>
+</body>
+</html>

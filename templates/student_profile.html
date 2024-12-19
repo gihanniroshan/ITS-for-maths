@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>Student Profile</h1>
+    </header>
+    <main class="content">
+        <div class="profile-tile">
+            <div class="profile-header">
+                <img src="{{ url_for('static', filename='profile-pic.png') }}" alt="Profile Picture" class="profile-pic">
+                <h2>{{ student.name }}</h2>
+                <p>Student ID: {{ student.student_id }}</p>
+            </div>
+            <div class="profile-details">
+                <h3>Current Level: <span class="level">{{ student.level }}</span></h3>
+                <h3>Preferred Learning Styles:</h3>
+                <div class="learning-styles">
+                    {% for style in ["Auditory", "Kinesthetic", "Reading/Writing", "Visual"] %}
+                    <label>
+                        <input type="checkbox" {% if style in student.learning_styles %}checked{% endif %}>
+                        {{ style }}
+                    </label>
+                    {% endfor %}
+                </div>
+                <h3>Completed Learning Objects:</h3>
+                <ul class="completed-objects">
+                    {% for object in student.completed_learning_objects %}
+                    <li>{{ object }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="#" class="btn back-btn">Update Profile</a>
+        </div>
+        <a href="{{ url_for('index') }}" class="btn back-btn">Back to Dashboard</a>
+    </main>
+</body>
+</html>

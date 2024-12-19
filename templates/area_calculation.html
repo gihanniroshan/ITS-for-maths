@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>{{ title }}</h1>
+    </header>
+    <main class="content">
+        <div class="area-shape-tiles">
+            <div class="area-shape-tile">
+                <img src="{{ url_for('static', filename='2d-shapes.png') }}" alt="2D Shapes">
+                <h2>Two-Dimensional Shapes</h2>
+                <p>Calculate areas of flat shapes like triangles, squares, circles, and more.</p>
+                <a href="{{ url_for('two_d_shapes') }}" class="btn">Explore 2D Shapes</a>
+            </div>
+            <div class="area-shape-tile">
+                <img src="{{ url_for('static', filename='3d-shapes.png') }}" alt="3D Shapes">
+                <h2>Three-Dimensional Shapes</h2>
+                <p>Compute surface areas and volumes of 3D objects like cubes, spheres, and cylinders.</p>
+                <a href="#" class="btn">Explore 3D Shapes</a>
+            </div>
+        </div>
+        
+        <a href="{{ url_for('index') }}">Back to Dashboard</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Concepts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>Mathematical Concepts</h1>
+    </header>
+    <main class="content">
+        <div class="concept-tiles">
+            {% for main_concept, sub_concepts in concepts.items() %}
+            <div class="main-concept-tile">
+                <h2>{{ main_concept }}</h2>
+                <div class="sub-concept-tiles">
+                    {% for sub_concept in sub_concepts %}
+                    <div class="sub-concept-tile">
+                        <h3>{{ sub_concept }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('index') }}" class="btn back-btn">Back to Dashboard</a>
+    </main>
+</body>
+</html>
