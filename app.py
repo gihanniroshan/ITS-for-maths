@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     tiles = [
-        {"title": "Area Calculation", "description": "Calculate areas of different shapes", "route": "area_calculation"},
+        {"title": "Area Calculation Box", "description": "Calculate areas of different shapes", "route": "area_calculation"},
         {"title": "Lessons", "description": "Access math lessons", "route": "lessons"},
         {"title": "Mathematical Concepts", "description": "Mathematical concepts for area calculation.", "route": "mathematical_concepts"},
         {"title": "Assessments", "description": "Take math assessments", "route": "assessments"},
